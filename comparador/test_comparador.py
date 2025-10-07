@@ -28,4 +28,28 @@ def test_total_consorcio_deve_ser_menor_que_financiamento():
     # Com juros altos, o consórcio deve ser mais barato
     assert total_cons < total_fin
 
+@pytest.mark.parametrize(
+    "valor, taxa, prazo",
+    [
+        (-100000, 10, 80),  # valor negativo
+        (100000, -5, 80),   # taxa negativa
+        (100000, 10, 0)     # prazo zero
+    ]
+)
+def test_consorcio_valores_invalidos(valor, taxa, prazo):
+    with pytest.raises(ValueError):
+        calcular_consorcio(valor=valor, taxa_admin=taxa, prazo=prazo)
+
+
+@pytest.mark.parametrize(
+    "valor, juros, prazo",
+    [
+        (-100000, 1.2, 60),  # valor negativo
+        (100000, -2, 60),    # juros negativo
+        (100000, 1.2, 0)     # prazo zero
+    ]
+)
+def test_financiamento_valores_invalidos(valor, juros, prazo):
+    with pytest.raises(ValueError):
+        calcular_financiamento(valor=valor, juros_mensal=juros, prazo=prazo)
 
