@@ -1,5 +1,7 @@
 # QA_VA1_comparador-de-financiamento
 
+VA1 referente a cadeira de teste do Prof. Angelo.
+
 Regras de negocio testadas,
 
 Numero do item abaixo equivale ao respectivo teste unitário:
