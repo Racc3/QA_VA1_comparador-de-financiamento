@@ -1,0 +1,1 @@
+# QA_VA1_comparador-de-financiamento
